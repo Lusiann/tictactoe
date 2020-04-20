@@ -1,0 +1,68 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#grid{
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenitoreTris {
+    
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    min-width: 300px;
+    min-height: 300px;
+    width: 85vw;
+	height: 85vw;
+	max-height: 600px;
+	max-width: 600px;
+    
+}
+
+#contenitoreTris > div{    
+    border: solid 1px black;
+    
+    
+}
+
+.empty {
+    background-color: red;
+}
+
+.X {
+    background: url(svg/X.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.O {
+    background: url(svg/O.svg);
+    background-size: 100%;
+    
+}
+
+.selezionaNome {
+    
+    opacity: 0;
+    transition: opacity 1s linear;
+    width: 0px;
+    height: 0px;
+    
+}
+
+.selezionaNome.active {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    opacity: 1;    
+    background-color: white;
+
+}
