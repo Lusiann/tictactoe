@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="tris.css">
+    <link rel="shortcut icon" href="#">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tris</title>
@@ -21,16 +23,39 @@
         <div data-position='8'></div>
     </div>
     </div>
-    <p id="display"></p>
-
-    <form class="selezionaNome">
+    <div id="contenitoreInfo">
+   
+    
+    <button id="settings">Settings</button>
+   
+    <form class="selezionaNome" id="form">
     <label for="player1input">Player 1 name</label>
-    <input type="text" name="player1input" class="inputPlayer1">
+    <input type="text" name="player1input" class="inputPlayer1" value="Player1">    
     <label for="player2input" id="ciao">Player 2 name</label>
-    <input type="text" name="player2input" class="inputPlayer2" >
+    <input type="text" name="player2input" class="inputPlayer2" value="Player2">
+    <label for="playersequence">Who goes First</label>
+    <select id="playersequence" name="order" form="form">
+    <option value="player1">Player1</option>
+    <option value="player2">Player2</option>
+    <option value="random">Random</option>
+    </select>
+    <label for="playersequence">Play against</label>
+    <select id="playersequence" name="order" form="form">
+    <option value="player1">Yourself</option>
+    <option value="minmax">CPU god</option>
+    <option value="minmaxRandom">CPU meh</option>
+    <option value="randomlol">CPU idiot</option>
+    </select>
+    <button type="submit">save</button>
     </form>
+    
 
-    <button id="restart">Restart</button>
-    <script src="tris.js"></script>   
+    <button id="restart">Restart Game</button>
+    <p id="display"><strong>Player1</strong> with <strong>X</strong> starts</p>
+    <audio id="myAudio">
+        <source src="svg/BruhSoundEffect2.mp3" type="audio/mpeg">        
+    </audio>
+    <script src="tris.js"></script>
+</div>   
 </body>
 </html>

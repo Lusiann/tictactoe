@@ -1,10 +1,14 @@
 body{
     padding: 0;
     margin: 0;
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    
 }
 
 h1 {
     text-align: center;
+    font-family: 'Lobster two';
+    font-size: 40px;
 }
 
 #grid{
@@ -29,13 +33,37 @@ h1 {
 
 #contenitoreTris > div{    
     border: solid 1px black;
+    transition: 0.1s;
     
     
 }
 
-.empty {
-    background-color: red;
+#contenitoreTris > div:hover{    
+    background-color: rgba(255, 255, 255, 0.219);
+    
+    
 }
+
+#contenitoreTris > div.winner{    
+    background-color: rgba(0, 128, 0, 0.849);
+    animation: highlight 1s normal;
+}
+
+@keyframes highlight {
+    0% {background-color:  rgba(0, 128, 0, 0.849);}
+    25% {background-color: transparent;}
+    50% {background-color:  rgba(0, 128, 0, 0.849);}
+    75% {background-color: transparent;}
+    100% {background-color:  rgba(0, 128, 0, 0.849);}
+
+}
+
+
+#contenitoreTris > div.tie{
+    background-color: rgba(255, 255, 0, 0.842);
+}
+
+
 
 .X {
     background: url(svg/X.svg);
@@ -49,20 +77,50 @@ h1 {
     
 }
 
+#contenitoreInfo {
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    
+    
+}
+
+#settings {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+
 .selezionaNome {
-    
-    opacity: 0;
-    transition: opacity 1s linear;
-    width: 0px;
-    height: 0px;
-    
-}
-
-.selezionaNome.active {
+    background-color: lightgray;
+    top: 40px;
+    right: 20px;
     position: absolute;
-    height: 200px;
-    width: 200px;
-    opacity: 1;    
-    background-color: white;
-
+    display: grid;
+    text-align: center;
+    opacity: 0;    
+    width: 0px;
+    height: 0px;    
+    
 }
+
+.selezionaNome.active {       
+    height: 30vh;
+    width: 20vw;
+    opacity: 1;
+    padding: 10px;
+    background-color: lightgray;
+    border: 1px black solid;
+    
+}
+
+#contenitoreInfo > p {
+    margin-left: 10px;
+    width: 300px;
+}
+
+#contenitoreInfo > button{
+    z-index: 2;
+}
+
